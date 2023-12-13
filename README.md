@@ -79,6 +79,31 @@ R1(config-if)# ip nat outside
 ```
 
 ### TFTP
+https://itexamanswers.net/10-6-12-lab-use-tftp-flash-and-usb-to-manage-configuration-files-answers.html
+```kotlin
+//spouštěl se na to nějaký program, díky kterému se z PC udělal TFTP server
+copy running-config tftp:
+//zadat adresu TFTP serveru
+//zadat destination file name
 
+//Soubor by se měl po tomto objevit na ploše 
+
+//Obnova running-config z TFTP serveru 
+erase running-config
+relaod
+copy tftp: running-config
+// adresa TFTP serveru
+// název souboru, který obsahuje running config
+// destination - jen stisknout enter
+```
 
 ### NTP
+https://itexamanswers.net/15-1-2-lab-implement-ntp-answers.html
+```kotlin
+R3(config)# ntp master 10
+R2(config)# ntp server 172.16.1.2
+
+
+R2# show ntp associations
+R2# show ntp status
+```
